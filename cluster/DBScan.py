@@ -20,7 +20,7 @@ for line in f:
     else:
         onlinetimes[mac2id[mac]] = [(starttime, onlinetime)]
 
-real_X = np.array(onlinetimes).reshape((-1, 2))
+real_X = np.array(onlinetimes).reshape((-1, 2)) #将list类型的online
 
 #开始对上网开始时间进行DBSCAN聚类分析
 X = real_X[:, 0:1]#上网开始时间的list
