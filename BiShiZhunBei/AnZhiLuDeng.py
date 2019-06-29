@@ -1,34 +1,23 @@
 #!/usr/bin/env python
-import sys
 
-def LuDeng(n,s):
+def LuDeng(n, s):
     num = 0
+    pos = 0
+    while pos < len(s):
+        point = s[pos]
+        if point == '.':
+            num += 1
+            pos += 3
+        else:
+            pos += 1
 
-    daolu = list(s.strip().split())
-    Y_count = 0
-
-    for i in range(0,len(daolu)):
-        if  daolu[i] == 'X' :
-            if Y_count != 0:
-                if Y_count % 3 == 0:
-                    num += int(Y_count / 3)
-                else:
-                    num += int(Y_count / 3) + 1
-            Y_count = 0
-        elif daolu[i] == '.':
-            Y_count += 1
     print(num)
 
-
-lines = sys.stdin.readlines()
-t = int(lines[0].strip())
-
-for i in range(1,t+1):
-    if(i%2 ==0):
-        continue
-    elif not lines[i].strip():
-        continue
-    else:
-        n = int(lines[i].strip())
-        s = lines[i+1].strip()
+if __name__ == '__main__':
+    count = int(input())
+    for i in range(count):
+        n = int(input())
+        s = input()
         LuDeng(n,s)
+
+
