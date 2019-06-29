@@ -28,3 +28,4 @@ for skill in skills:
             print(0)
         else:
             print(task[arr[ind -1]])
+            #update
